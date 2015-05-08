@@ -1,7 +1,7 @@
 {
   "name": "axjs",
   "filename": "ax.js",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A RESTful, ajax micro browser library that is under 2kb.",
   "main": "lib",
   "scripts": {
