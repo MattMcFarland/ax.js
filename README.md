@@ -1,12 +1,20 @@
 ![Ax.js](./src/ax.js.gif)
 
 A microscopic, RESTful, AJAX browser library; just under 2kb.
-
-* [Quick Start](#quick-start)
+* [Usage](#usage)
+* [Use with browser window](#quick-start)
 * [Use as generic module](#use-with-module)
 * [Use with nodejs](#use-with-nodejs)
 
-## Quick Start
+## Usage
+
+```javscript
+
+ax
+
+```
+
+## Use with browser window
 
 ```
 <script src="ax.min.0.3.1.js"></script>
