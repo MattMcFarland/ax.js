@@ -3,3 +3,4 @@
 node_modules
 lib
 gulpfile.js
+.DS_Store
