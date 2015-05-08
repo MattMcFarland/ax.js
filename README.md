@@ -2,18 +2,9 @@
 
 An a(ja)x micro browser library
 
-## Get
-
-Available via npm, or as an html <script> tag.
-
-### npm:
+## Usage
 
 ```
-npm install ax.js
+<script src="ax.js"></script>
 ```
 
-In your javascript file somewhere.
-
-```javascript
-var ax = require('ax.js');
-```
