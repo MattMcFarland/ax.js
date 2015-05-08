@@ -12,10 +12,12 @@ A RESTful, ajax micro browser library that is under 2kb.
 <script src="ax.js"></script>
 ```
 
-## Use with module
+## Use with generic module
+
+Ax.js can be *required* in with a UMD or AMD library like requirejs.
 
 ``` javascript
-var ax=require('ax.0.3.0.js');
+var ax = require('ax.0.3.0');
 ```
 
 ## Use with nodejs

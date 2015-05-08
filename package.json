@@ -1,7 +1,7 @@
 {
   "name": "axjs",
-  "version": "0.2.0",
-  "description": "a(ja)x micro browser library",
+  "version": "0.3.0",
+  "description": "A RESTful, ajax micro browser library that is under 2kb.",
   "main": "lib",
   "scripts": {
     "bundle": "gulp",
