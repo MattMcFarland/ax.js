@@ -2,9 +2,9 @@
 
 A RESTful, ajax micro browser library that is under 2kb.
 
-[Quick Start](#quick-start)
-[Use as generic module](#use-with-module)
-[Use with nodejs](#use-with-nodejs)
+* [Quick Start](#quick-start)
+* [Use as generic module](#use-with-module)
+* [Use with nodejs](#use-with-nodejs)
 
 ## Quick Start
 
