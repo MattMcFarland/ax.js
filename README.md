@@ -33,7 +33,7 @@ var request = new Ax(method, url, [data], [type], done);
 Similar approach, see [arguments](#arguments) above for explanation of values...
 
 ```javascript
-var request = new Ajax({
+var request = new Ax({
   method: method,
   url: url,
   data: [data],
