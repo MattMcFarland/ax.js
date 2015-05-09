@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ax.js by MattMcFarland</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Ax.js</h1>
+      <h2 class="project-tagline">A RESTful, ajax micro browser library that is under 2kb.</h2>
+      <a href="https://github.com/MattMcFarland/ax.js" class="btn">View on GitHub</a>
+      <a href="https://github.com/MattMcFarland/ax.js/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/MattMcFarland/ax.js/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><img src="./src/ax.js.gif" alt="Ax.js"></p>
+
+<p>A microscopic, RESTful, AJAX browser library; just under 2kb.</p>
+
+<ul>
+<li><a href="#ax">Usage</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul>
+
+<p>Installation:</p>
+
+<ul>
+<li><a href="#browser">Browser</a></li>
+<li><a href="#nodejs">NodeJS</a></li>
+<li><a href="#commonjs">UMD / AMD Module</a></li>
+</ul>
+
+<h2>
+<a id="ax" class="anchor" href="#ax" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ax</h2>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> request <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Ax</span>( <span class="pl-c1">Object</span> <span class="pl-k">||</span> Arguments); </pre></div>
+
+<h3>
+<a id="arguments-method" class="anchor" href="#arguments-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arguments Method</h3>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> request <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Ax</span>(method, url, [data], [type], done);</pre></div>
+
+<h4>
+<a id="arguments" class="anchor" href="#arguments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arguments</h4>
+
+<ol>
+<li>method <em>(String)</em>: http request (e.g., GET, PUT, POST, PATCH, DELETE, etc...)</li>
+<li>url <em>(String)</em>: location/href </li>
+<li>[data] <em>(Object|JSON)</em>: required if uploading data to the server</li>
+<li>[type] <em>(String)</em>: Content-Type header (default is application/json)</li>
+<li>done <em>(Function)</em> Callback when request is finished, is always the <em>last argument</em> passed.</li>
+</ol>
+
+<h3>
+<a id="object-method" class="anchor" href="#object-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Object Method</h3>
+
+<p>Similar approach, see <a href="#arguments">arguments</a> above for explanation of values...</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> request <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Ax</span>({
+  method<span class="pl-k">:</span> method,
+  url<span class="pl-k">:</span> url,
+  data<span class="pl-k">:</span> [data],
+  type<span class="pl-k">:</span> [type],
+  done<span class="pl-k">:</span> done
+}, [done]);</pre></div>
+
+<p>NOTE:  the <em>done</em> callback can either be in the first argument that is an object, or the <em>last</em> argument; but not both.  If a function is detected as the <em>last</em> argument, Ax will use that and ignore the other.</p>
+
+<h3>
+<a id="callback" class="anchor" href="#callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>Callback</h3>
+
+<p>The <em>done</em> callback function is passed as the <em>last</em> argument.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> request <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Ax</span>(...args, <span class="pl-k">function</span> (<span class="pl-smi">res</span>, <span class="pl-smi">xhr</span>, <span class="pl-smi">err</span>) {
+  <span class="pl-c">// Single error detection</span>
+  <span class="pl-k">if</span> (err) {
+    <span class="pl-c">// Whoops lets do something</span>
+  }
+  <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>response is<span class="pl-pds">'</span></span>, res);
+});</pre></div>
+
+<p>It may also be part of the options object</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> request <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Ax</span>({
+  ...<span class="pl-c1">options</span>,
+  <span class="pl-en">done</span>: <span class="pl-k">function</span> (<span class="pl-smi">res</span>, <span class="pl-smi">xhr</span>, <span class="pl-smi">err</span>) {    
+    <span class="pl-k">if</span> (err) <span class="pl-en">console</span><span class="pl-c1">.error</span>(err);
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(res, xhr);
+  }
+});</pre></div>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>Get user data...</p>
+
+<pre lang="javscript"><code>var request = new Ax('GET', '/users/' + userid', function (res, xhr, err) {
+  if (err) {
+    // An error has occurred
+  } else {
+    var userdata = res;
+    // Do something with user data.
+  }
+});
+</code></pre>
+
+<p>Update a user profile...</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> request <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Ax</span>({
+  method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>PUT<span class="pl-pds">'</span></span>,
+  url<span class="pl-k">:</span> userUrl,
+  data<span class="pl-k">:</span> newData,,
+  <span class="pl-en">done</span>: <span class="pl-en">callBack</span>()
+});</pre></div>
+
+<p>Post a form...</p>
+
+<pre lang="javscript"><code>var request = new Ax('POST', '/submit/', formData, function (res, xhr, err) {
+  if (err) {
+    alert ('total failure', err);
+  } else {
+    console.log('server response is', res);
+  }
+});
+</code></pre>
+
+<h2>
+<a id="browser" class="anchor" href="#browser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser</h2>
+
+<pre><code>&lt;script src="ax.min"&gt;&lt;/script&gt;
+</code></pre>
+
+<h2>
+<a id="nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>NodeJS</h2>
+
+<p>Ax.js has been built with browserify, and works with both browserify and webpack.</p>
+
+<p>Install via npm:</p>
+
+<pre><code>npm install axjs
+</code></pre>
+
+<p><em>require</em> the module </p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> Ax <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>axjs<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="commonjs" class="anchor" href="#commonjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>CommonJS</h2>
+
+<p>Ax.js can be <em>required</em> in with a UMD or AMD library like requirejs.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> Ax <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>ax<span class="pl-pds">'</span></span>);</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/MattMcFarland/ax.js">Ax.js</a> is maintained by <a href="https://github.com/MattMcFarland">MattMcFarland</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
