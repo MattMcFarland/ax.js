@@ -5,10 +5,56 @@
     <title>test</title>
 </head>
 <body>
-<script src="../ax.js"></script>
+
+<script src="../dist/Ax.js"></script>
 
 <script>
-    console.log(ax);
+    Ax('GET', 'stuff.json', function (res, xhr, err) {
+        if (err) {
+            console.log(err, xhr)
+        } else {
+            console.log(res, xhr);
+        }
+    });
+    var test2 = new Ax({
+        method: 'GET',
+        url:'stuff.json',
+        done: function (res, xhr, err) {
+            if (err) {
+                console.log(err, xhr)
+            } else {
+                console.log(res, xhr);
+            }
+        }
+    });
+    var test3 = new Ax({
+        method: 'PUT',
+        url:'stuff.json',
+        data: {
+            'breakfast': 'luckycharms',
+            'lunch': 'pb njs',
+            'dinner': 'potato'
+        },
+        done: function (res, xhr, err) {
+            if (err) {
+                console.log(err, xhr)
+            } else {
+                console.log(res, xhr);
+            }
+        }
+    });
+    var data = {
+        'breakfast': 'luckycharms',
+        'lunch': 'pb njs',
+        'dinner': 'potato'
+    };
+    var test4 = new Ax('PUT', 'something', data, function (res, xhr, err) {
+        if (err) {
+            console.log( 'error', err);
+        } else {
+            console.log(res);
+        }
+    });
 </script>
 </body>
 </html>

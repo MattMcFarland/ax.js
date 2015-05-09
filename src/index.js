@@ -1,15 +1,6 @@
-module.exports = function (options) {
+var
+    args    = Array.prototype.slice.call(arguments),
+    xhr     = require ('./xhr'),
+    getOpts = require ('./getOptions');
 
-    var
-        ax          = {},
-        xhr         = require ('./xhr'),
-        getOpts     = require ('./getOptions');
-
-    ax.protoype = function () {
-        return xhr(getOpts(options));
-    };
-
-    return ax;
-
-
-};
+module.exports = function () { return xhr(getOpts(args)) };
