@@ -1,4 +1,4 @@
-![Ax.js](//i.imgur.com/twliVZx.png)
+![Ax.js](http://i.imgur.com/twliVZx.png)
 
 A microscopic, RESTful, AJAX browser library; just under 2kb.
 * [Usage](#ax)
