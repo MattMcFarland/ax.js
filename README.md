@@ -42,7 +42,7 @@ var request = new Ax({
   done: done
 }, [done]);
 ```
-NOTE:  the *done* callback can either be in the first argument that is an object, or the *last* argument; but not both.  If a function is detected as the *last* argument, Ax will use that and ignore the other.
+NOTE:  the *done* callback can either as an ```object property``` in the first argument, or the *last* argument; but not both.  If a function is detected as the *last* argument, Ax will use that and ignore the other.
 
 ### Callback
 
@@ -86,7 +86,7 @@ var request = new Ax('GET', '/users/' + userid', function (res, xhr, err) {
 
 Update a user profile...
 ```javascript
-var request = new Ax({
+new Ax({
   method: 'PUT',
   url: userUrl,
   data: newData,,
