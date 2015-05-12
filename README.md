@@ -42,7 +42,7 @@ var request = new Ax({
   done: done
 }, [done]);
 ```
-NOTE:  the *done* callback can either as an ```object property``` in the first argument, or the *last* argument; but not both.  If a function is detected as the *last* argument, Ax will use that and ignore the other.
+NOTE:  the *done* callback can either be an ```object property``` in the first argument, or the *last* argument; but not both.  If a function is detected as the *last* argument, Ax will use that and ignore the other.
 
 ### Callback
 
