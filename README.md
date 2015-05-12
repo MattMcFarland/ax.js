@@ -1,6 +1,6 @@
 ![Ax.js](http://i.imgur.com/twliVZx.png)
 
-A microscopic, RESTful, AJAX browser library; just under 2kb.
+ RESTful, AJAX, microscopic yet flexible browser library.
 * [Usage](#ax)
 * [Examples](#examples)
 
