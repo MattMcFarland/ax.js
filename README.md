@@ -14,6 +14,7 @@ Installation:
 ```javascript
 var request = new Ax( Object || Arguments); 
 ```
+
 ### Arguments Method
 
 ```javascript
@@ -106,14 +107,15 @@ var request = new Ax('POST', '/submit/', formData, function (res, xhr, err) {
 ```
 
 ## Installation
-
-Installation can be as simple as an HTML <script> tag, or used with a UMD/AMD library like requirejs.  My personal favorite is usage with nodejs ;)
+Installation can be as simple as an HTML ```<script>``` tag, or used with a UMD/AMD library like requirejs.  My personal favorite is usage with nodejs ;)
 
 ### Browser
 
 ```
 <script src="ax.min.js"></script>
 ```
+
+
 
 ### NodeJS
 
