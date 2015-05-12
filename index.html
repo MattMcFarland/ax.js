@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,23 +15,22 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">Ax.js</h1>
-        <p class="header">A RESTful, ajax micro browser library that is under 2kb.</p>
+        <h1>Ax.js</h1>
+        <p>A RESTful, ajax micro browser library that is under 2kb.</p>
+
+        <p class="view"><a href="https://github.com/MattMcFarland/ax.js">View the Project on GitHub <small>MattMcFarland/ax.js</small></a></p>
+
 
         <ul>
-          <li class="download"><a class="buttons" href="https://github.com/MattMcFarland/ax.js/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/MattMcFarland/ax.js/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/MattMcFarland/ax.js">View On GitHub</a></li>
+          <li><a href="https://github.com/MattMcFarland/ax.js/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/MattMcFarland/ax.js/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/MattMcFarland/ax.js">View On <strong>GitHub</strong></a></li>
         </ul>
-
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/MattMcFarland">MattMcFarland</a></p>
-
-
       </header>
       <section>
         <p><img src="http://i.imgur.com/twliVZx.png" alt="Ax.js"></p>
 
-<p>A microscopic, RESTful, AJAX browser library; just under 2kb.</p>
+<p>RESTful, AJAX, microscopic yet flexible browser library.</p>
 
 <ul>
 <li><a href="#ax">Usage</a></li>
@@ -81,7 +79,7 @@
   done<span class="pl-k">:</span> done
 }, [done]);</pre></div>
 
-<p>NOTE:  the <em>done</em> callback can either be in the first argument that is an object, or the <em>last</em> argument; but not both.  If a function is detected as the <em>last</em> argument, Ax will use that and ignore the other.</p>
+<p>NOTE:  the <em>done</em> callback can either be an <code>object property</code> in the first argument, or the <em>last</em> argument; but not both.  If a function is detected as the <em>last</em> argument, Ax will use that and ignore the other.</p>
 
 <h3>
 <a id="callback" class="anchor" href="#callback" aria-hidden="true"><span class="octicon octicon-link"></span></a>Callback</h3>
@@ -123,7 +121,7 @@
 
 <p>Update a user profile...</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> request <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Ax</span>({
+<div class="highlight highlight-javascript"><pre><span class="pl-k">new</span> <span class="pl-en">Ax</span>({
   method<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>PUT<span class="pl-pds">'</span></span>,
   url<span class="pl-k">:</span> userUrl,
   data<span class="pl-k">:</span> newData,,
@@ -142,13 +140,18 @@
 </code></pre>
 
 <h2>
-<a id="browser" class="anchor" href="#browser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
-<pre><code>&lt;script src="ax.min"&gt;&lt;/script&gt;
+<p>Installation can be as simple as an HTML <code>&lt;script&gt;</code> tag, or used with a UMD/AMD library like requirejs.  My personal favorite is usage with nodejs ;)</p>
+
+<h3>
+<a id="browser" class="anchor" href="#browser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser</h3>
+
+<pre><code>&lt;script src="ax.min.js"&gt;&lt;/script&gt;
 </code></pre>
 
-<h2>
-<a id="nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>NodeJS</h2>
+<h3>
+<a id="nodejs" class="anchor" href="#nodejs" aria-hidden="true"><span class="octicon octicon-link"></span></a>NodeJS</h3>
 
 <p>Ax.js has been built with browserify, and works with both browserify and webpack.</p>
 
@@ -161,18 +164,19 @@
 
 <div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> Ax <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>axjs<span class="pl-pds">'</span></span>);</pre></div>
 
-<h2>
-<a id="commonjs" class="anchor" href="#commonjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>CommonJS</h2>
+<h3>
+<a id="commonjs" class="anchor" href="#commonjs" aria-hidden="true"><span class="octicon octicon-link"></span></a>CommonJS</h3>
 
 <p>Ax.js can be <em>required</em> in with a UMD or AMD library like requirejs.</p>
 
 <div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> Ax <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>ax<span class="pl-pds">'</span></span>);</pre></div>
       </section>
       <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p>This project is maintained by <a href="https://github.com/MattMcFarland">MattMcFarland</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+    <script src="javascripts/scale.fix.js"></script>
+    
   </body>
 </html>
