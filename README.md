@@ -105,14 +105,17 @@ var request = new Ax('POST', '/submit/', formData, function (res, xhr, err) {
 });
 ```
 
+## Installation
 
-## Browser
+Installation can be as simple as an HTML <script> tag, or used with a UMD/AMD library like requirejs.  My personal favorite is usage with nodejs ;)
+
+### Browser
 
 ```
-<script src="ax.min"></script>
+<script src="ax.min.js"></script>
 ```
 
-## NodeJS
+### NodeJS
 
 Ax.js has been built with browserify, and works with both browserify and webpack.
 
@@ -127,7 +130,7 @@ npm install axjs
 var Ax = require('axjs');
 ```
 
-## CommonJS
+### CommonJS
 
 Ax.js can be *required* in with a UMD or AMD library like requirejs.
 
