@@ -1,6 +1,6 @@
 ![Ax.js](http://i.imgur.com/twliVZx.png)
 
- RESTful, AJAX, microscopic yet flexible browser library.
+ RESTful, AJAX, microscopic yet flexible browser library.  No longer in support,  I think some great alternatives are qwest, RIP, or super agent.
 * [Usage](#ax)
 * [Examples](#examples)
 
